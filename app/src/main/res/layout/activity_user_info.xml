@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.prabhat.raj.UserInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_user_informaton"
+        >
+    <Button
+        android:id="@+id/btn_show_user_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Show User Info " />
+
+        <Button
+            android:id="@+id/btn_show_user_info_from_sqlite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Show User Info from sqlite" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="User Info"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:layout_below="@+id/tv_user_informaton"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_user_info"
+        android:layout_marginTop="10dp"
+        android:text="Name" />
+
+
+    <TextView
+        android:id="@+id/tv_user_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_user_name"
+        android:layout_marginTop="10dp"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/tv_user_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_user_email"
+        android:layout_marginTop="10dp"
+        android:text="Password" />
+
+
+    <TextView
+        android:id="@+id/tv_user_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_user_password"
+        android:layout_marginTop="10dp"
+        android:text="Contact" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_view"
+        android:layout_below="@+id/tv_user_contact"
+        android:layout_centerHorizontal="true"
+        android:text="Show User Detail by Id"
+        android:textSize="23dp"
+        android:layout_marginTop="8dp"
+        />
+      <EditText
+          android:id="@+id/et_id"
+          android:layout_below="@+id/show_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:hint="Enter Id"
+          />
+
+</RelativeLayout>

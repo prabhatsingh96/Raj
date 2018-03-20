@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.prabhat.raj.AppActivity.HomeActivity">
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/kkk"
+        >
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Select Your Sex"
+            android:layout_below="@+id/iv_image"
+            android:textColor="#ff3f36"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="15dp"
+            android:editable="false"
+            android:textSize="25dp"
+            android:id="@+id/tv"
+
+            />
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btgrp"
+            android:layout_below="@+id/tv"
+            android:layout_marginBottom="10dp"
+            >
+            <RadioButton
+                android:text="Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_button_male"
+                />
+            <RadioButton
+                android:text="Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_button_female"
+
+                />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:onClick="calendarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Enter Your Date of Birth"
+            android:textColorHint="#ff3f36"
+            android:textColor="#ff3f36"
+            android:layout_below="@+id/btgrp"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="15dp"
+            android:editable="false"
+            android:textSize="25dp"
+            android:id="@+id/text"
+
+
+            />
+
+        <TextView
+            android:onClick="timeText"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Chosse time "
+            android:textColorHint="#ff3f36"
+            android:textColor="#ff3f36"
+            android:layout_below="@+id/text"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="15dp"
+            android:editable="false"
+            android:textSize="25dp"
+            android:id="@+id/text_time"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Select Your State"
+            android:layout_below="@+id/text_time"
+            android:textColor="#ff3f36"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="15dp"
+            android:editable="false"
+            android:textSize="25dp"
+            android:id="@+id/tv_slect_spinner"/>
+        <Spinner
+            android:layout_centerHorizontal="true"
+            android:spinnerMode="dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_state"
+            android:layout_below="@+id/tv_slect_spinner"
+            android:textAlignment="gravity"
+
+            >
+
+        </Spinner>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_state"
+           android:onClick="SpinnerSubmitbtn"
+            android:text="Submit"
+            android:id="@+id/btn_spinner"
+            android:layout_centerInParent="true"
+            />
+        <Button
+            android:id="@+id/display_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display "
+            android:layout_below="@+id/btn_spinner"
+            android:onClick="btnDisplay"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>

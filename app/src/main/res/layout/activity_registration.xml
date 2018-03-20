@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.prabhat.raj.AppActivity.RegistrationActivity"
+    android:id="@+id/root_layout"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:padding="20dp"
+        android:layout_margin="5dp"
+        android:hint="Enter your name"
+
+        />
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_email"
+        android:layout_below="@+id/et_name"
+        android:padding="20dp"
+        android:hint="Enter your Email"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_password"
+        android:layout_below="@+id/et_email"
+        android:padding="20dp"
+        android:hint="Enter your name"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_contact"
+        android:layout_below="@+id/et_password"
+        android:padding="20dp"
+        android:hint="Enter your name"
+        android:layout_margin="5dp"
+        />
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_contact"
+        >
+    <Button
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registeration_button"
+        android:text="Register in SharedPref"
+        android:layout_margin="20dp"
+        />
+
+        <Button
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_data_sql_button"
+            android:text="Register In SQLite"
+            android:layout_margin="20dp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_layout"
+        >
+        <Button
+            android:onClick="showAllUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show all user"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/home_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/home"
+            android:src="@drawable/abc"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_toRightOf="@+id/home"
+            android:layout_marginTop="35dp"
+            android:text="Home"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+
+        android:id="@+id/setting_layout"
+        android:layout_below="@id/home_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/setting"
+            android:src="@drawable/def"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_toRightOf="@+id/setting"
+            android:layout_marginTop="35dp"
+            android:text="Setting"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+
+   <ImageView
+       android:layout_below="@+id/setting_layout"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="130dp"
+       android:layout_marginBottom="30dp"
+       android:src="@drawable/gallary_icon"
+       android:layout_width="140dp"
+       android:layout_height="140dp" />
+
+</RelativeLayout>

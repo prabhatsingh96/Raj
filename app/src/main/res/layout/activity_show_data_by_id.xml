@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.prabhat.raj.AppActivity.ShowDataByIdActivity">
+
+    <TextView
+        android:id="@+id/tv_user_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:text="User Detail" />
+
+    <TextView
+        android:layout_below="@+id/tv_user_detail"
+        android:id="@+id/tv_user_name_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Name" />
+
+
+    <TextView
+        android:id="@+id/tv_user_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_user_name_id"
+        android:layout_marginTop="17dp"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/tv_user_password_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_user_email_id"
+        android:layout_marginTop="10dp"
+        android:text="Password" />
+
+
+    <TextView
+        android:id="@+id/tv_user_contact_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_user_password_id"
+        android:layout_marginTop="10dp"
+        android:text="Contact" />
+
+
+
+
+</RelativeLayout>

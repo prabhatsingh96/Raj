@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/alert"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alert !"
+            android:textColor="#ff7d66"
+            android:background="#002df6"
+            android:padding="10dp"
+            android:layout_centerInParent="true"
+            android:editable="false"
+            /></RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout"
+            android:layout_below="@+id/alert"
+            >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are You confirm to LogOut"
+
+            android:layout_marginTop="10dp"
+            android:textColor="#ff7d66"
+            android:background="#ffffff"
+            android:padding="10dp"
+            android:id="@+id/logouttext"
+            android:layout_centerInParent="true"
+            android:editable="false"
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logout"
+        >
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnok"
+            android:text="Ok"
+            />
+        <Button
+            android:text="Cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btncancle"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
+
+

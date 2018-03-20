@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Raj</string>
+    <string-array name="subject">
+        <item>Java</item>
+        <item>Android</item>
+        <item>C++</item>
+    </string-array>
+
+    <string-array name="state_list">
+        <item>Aandhra Pradesh</item>
+        <item>Bihar</item>
+        <item>Telangana</item>
+        <item>Utter Pradesh</item>
+        <item>Rajsthan</item>
+    </string-array>
+
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popup">⋮</string>
+</resources>
