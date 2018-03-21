@@ -255,4 +255,8 @@ public class MainActivity extends AppCompatActivity {
 
          startActivity(new Intent(this, openCameraActivity.class));
     }
+
+    public void registerInSqlLite(View view) {
+         startActivity (new Intent(this, RegistrationInSqlLite.class));
+    }
 }

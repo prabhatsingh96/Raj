@@ -39,6 +39,7 @@ public class DbAdapter {
     }
 
 
+
     // show UserDetail by Id
      public UserDetail showUserDetailById(int userId){
       // String columns[] = {DbHelper._ID,DbHelper.NAME,DbHelper.EMAIL,DbHelper.PASSWORD,DbHelper.CONTACT};
