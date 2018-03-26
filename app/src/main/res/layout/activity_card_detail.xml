@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    tools:context="com.example.prabhat.raj.AppActivity.CardDetailActivity">
+
+
+
+    <TextView
+        android:id="@+id/tv_card_detail"
+        android:text="Card Detail"
+        android:textSize="20dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_card_number"
+        android:layout_below="@+id/tv_card_detail"
+        android:hint="Card Number"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:maxLength="16"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/rl_date_layout"
+        android:layout_below="@+id/et_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        >
+        <Spinner
+            android:id="@+id/et_months"
+            android:layout_weight="1"
+            android:hint="Month"
+            android:inputType="number"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Spinner
+            android:id="@+id/et_year"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:hint="Month"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/et_cvv"
+        android:hint="CVV"
+        android:maxLength="3"
+        android:layout_below="@+id/rl_date_layout"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="saveData"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/et_cvv"
+        android:layout_marginTop="15dp"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:background="#f2632e"
+        android:textColor="#0d0c3c"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+</RelativeLayout>

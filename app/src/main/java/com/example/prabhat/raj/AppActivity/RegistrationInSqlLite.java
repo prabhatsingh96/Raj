@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.prabhat.raj.R;
 import com.example.prabhat.raj.UtilsApp.RegistrationDbAdapter;
+import com.squareup.picasso.Picasso;
 
 import java.net.URI;
 
@@ -47,6 +48,7 @@ public class RegistrationInSqlLite extends AppCompatActivity {
         gettingId ();
          allIntent ();
         allButtonClicksEvents ();
+       // gettingEditableData();
     }
 
     // getting id
@@ -87,7 +89,7 @@ public class RegistrationInSqlLite extends AppCompatActivity {
                 userGender ();
                 boolean b = registrationDbAdapter.insertDataInSqlLite (uri.toString (),
                         userName.getText ().toString (),
-                        userAddress.getText ().toString ());
+                        userAddress.getText ().toString (),gender);
                 if(b){
                     Toast.makeText (RegistrationInSqlLite.this, "WELCOME"+userName.getText ().toString ()
                             +" You are Registered", Toast.LENGTH_SHORT).show ();
@@ -148,6 +150,23 @@ public class RegistrationInSqlLite extends AppCompatActivity {
         }
     }
 
+
+    //getting data from back
+    public void gettingEditableData(){
+
+        String uri = getIntent ().getExtras ().getString("uri");
+        String name = getIntent ().getStringExtra ("name");
+       // String address = getIntent ().getStringExtra ("address");
+     //   String gender = getIntent ().getStringExtra ("gender");
+        int key = Integer.parseInt (getIntent ().getStringExtra ("key"));
+        if(key == 1){
+            Picasso.get ().load (Uri.parse (uri)).into (profileImage);
+            userName.setText (name);
+           // userAddress.setText (address);
+        }
+
+
+    }
 
 
 

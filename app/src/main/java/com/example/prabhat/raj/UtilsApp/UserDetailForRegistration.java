@@ -14,7 +14,7 @@ public class UserDetailForRegistration {
     public UserDetailForRegistration() {
     }
 
-    public UserDetailForRegistration(String uri, String name) {
+    public UserDetailForRegistration(String uri, String name, String address, String gender) {
         this.uri = uri;
         this.name = name;
 

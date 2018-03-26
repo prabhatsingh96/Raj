@@ -259,4 +259,9 @@ public class MainActivity extends AppCompatActivity {
     public void registerInSqlLite(View view) {
          startActivity (new Intent(this, RegistrationInSqlLite.class));
     }
+
+    public void paymentSystem(View view) {
+         startActivity (new Intent (this, PaymentSystemActivity.class));
+
+    }
 }

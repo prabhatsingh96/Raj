@@ -58,17 +58,8 @@ public class MyArrayAdapterForUserRegister extends ArrayAdapter {
         //set All fields
 
         tvName.setText(user.getName());
-        try {
-          //  Bitmap bitmap = MediaStore.Images.Media.getBitmap (context.getContentResolver (),
-            //        Uri.parse (user.getUri ()));
+        Picasso.get().load(user.getUri ()).into(circleImageView);
 
-            //BitmapFactory.Options options = new BitmapFactory.Options();
-            //options.inSampleSize = 8;
-            //Bitmap.createScaledBitmap(bitmap,400, 400, false);
-            //bitmap= BitmapFactory.decodeFile(user.getUri (),options);
-            Picasso.get().load(user.getUri ()).into(circleImageView);
-           // circleImageView.setImageBitmap (bitmap);
-        }catch (Exception e){}
         return view;
     }
 }

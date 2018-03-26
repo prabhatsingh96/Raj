@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    tools:context="com.example.prabhat.raj.AppActivity.PaymentSystemActivity">
+
+    <RelativeLayout
+        android:id="@+id/card_no_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:onClick="addNewCard"
+            android:id="@+id/btn_card_number"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="6dp"
+            android:padding="15dp"
+            android:text="Add New Card"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:textColor="#0d0c3c"
+            android:background="#f2632e"
+            android:alpha=".8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/card_detail_layout"
+        android:layout_below="@+id/card_no_relative_layout"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/card_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:onClick="proceedBtn"
+            android:text="Proceed"
+            android:layout_alignParentBottom="true"
+            android:textAllCaps="false"
+            android:background="#f2632e"
+            android:textColor="#0d0c3c"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

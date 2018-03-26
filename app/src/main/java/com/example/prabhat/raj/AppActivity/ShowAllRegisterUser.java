@@ -1,6 +1,7 @@
 package com.example.prabhat.raj.AppActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,7 +40,21 @@ public class ShowAllRegisterUser extends AppCompatActivity {
         listViewUser.setOnItemClickListener (new AdapterView.OnItemClickListener () {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity (new Intent (getApplicationContext (), RegistrationInSqlLite.class));
+                Intent intent = new Intent (getApplicationContext (), RegistrationInSqlLite.class);
+
+                String name = getIntent ().getExtras ().getString ("name");
+                String uri = getIntent ().getExtras ().getString ("uri");
+                user.setName (name);
+                user.setUri (uri);
+
+
+                user = new UserDetailForRegistration();
+                intent.putExtra ("uri",     user.getUri ().toString ());
+                intent.putExtra ("name",    user.getName ());
+              //  intent.putExtra ("address", user.getAddress ());
+             //   intent.putExtra ("gender",  user.getGender ());
+                intent.putExtra ("key",1);
+                startActivity (intent);
             }
         });
     }
@@ -48,8 +63,3 @@ public class ShowAllRegisterUser extends AppCompatActivity {
 
 
 
- /* String name = getIntent ().getExtras ().getString ("name");
-        String uri = getIntent ().getExtras ().getString ("uri");
-        user.setName (name);
-        user.setUri (uri);
-        arrayList.add(user);*/
