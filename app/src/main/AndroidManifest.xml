@@ -68,7 +68,8 @@
         <activity android:name=".AppActivity.RegistrationInSqlLite" />
         <activity android:name=".AppActivity.ShowAllRegisterUser" />
         <activity android:name=".AppActivity.PaymentSystemActivity" />
-        <activity android:name=".AppActivity.CardDetailActivity"></activity>
+        <activity android:name=".AppActivity.CardDetailActivity" />
+        <activity android:name=".AppActivity.JsonParsingActivity"></activity>
     </application>
 
 </manifest>

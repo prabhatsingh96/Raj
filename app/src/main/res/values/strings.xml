@@ -52,6 +52,28 @@
         <item>2010</item>
         <item>2011</item>
     </string-array>
-
+<string name="data">{"
+            +" \"message\": \"successfull\","
+            +"        \"result\": {"
+            +"         \"user_id\": \"8\","
+            +"         \"first_name\": \"Doctor\","
+            +"         \"latitude\": \"34.018824699999996\","
+            +"     \"longitude\": \"-118.2857791\","
+            +"     \"device_token\": \"eoFsKtE4zKE:APA91bH9409OkQuTVnOcm_VFAQJbQa5jmUTThqSw_V2KJJ8jolKF0b9mr0JzHLbqIPVoYtuZiKEfXN1Uj9KbP2sRA2cACDA_3u3xgdXAeNX-FOpVcCdBllOT8lfxLG-2yXeiTNnNOnKg\","
+            +"    \"device_type\": \"1\","
+            +"    \"user_type\": \"1\","
+            +"    \"last_name\": \"Dre\","
+            +"    \"is_request_student\": \"0\","
+            +"     \"term_condition\": \"1\","
+            +"     \"desired_commute\": \"3-8\","
+            +"    \"firebase_id\": \"DGewyqrQSqghqL5DNk3bh7Yep7G2\","
+            +"    \"gender\": \"null\","
+            +"     \"language\": \"Chinese\","
+            +"     \"image\": \"null\","
+            +"     \"professional\": \"null\","
+            +"     \"is_notify\": \"1\","
+            +"    \"is_bussy\": \"0\","
+            +"     \"address\": \"3670 Trousdale Pkwy, Los Angeles, CA 90089, USA\","
+            +"      "rating": "0"</string>
 
 </resources>

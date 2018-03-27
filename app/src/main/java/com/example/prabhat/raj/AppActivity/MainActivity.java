@@ -264,4 +264,8 @@ public class MainActivity extends AppCompatActivity {
          startActivity (new Intent (this, PaymentSystemActivity.class));
 
     }
+
+    public void jsonParsing(View view) {
+         startActivity (new Intent (this, JsonParsingActivity.class));
+    }
 }

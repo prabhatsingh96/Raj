@@ -63,6 +63,23 @@
 
 
 
+    <Button
+        android:id="@+id/btn_json_parsing"
+        android:onClick="jsonParsing"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="18dp"
+        android:layout_below="@+id/btn_asyn_task"
+        android:text="Json Parsing"
+        android:layout_toRightOf="@+id/btn_payment_system"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:textColor="@color/colorGreen"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
 
     <Button
         android:id="@+id/btn_pop_menu"
