@@ -79,6 +79,40 @@
         android:layout_height="wrap_content" />
 
 
+    <Button
+        android:id="@+id/btn_social_linkedin"
+        android:onClick="linkedinSignIn"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="18dp"
+        android:layout_below="@+id/btn_asyn_task"
+        android:text="LinkedIn SignIn"
+        android:layout_toRightOf="@+id/btn_json_parsing"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:textColor="@color/colorGreen"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <Button
+        android:id="@+id/btn_runtime_permission"
+        android:onClick="runTimePermission"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/btn_payment_system"
+        android:text="RunTime Permission"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:textColor="@color/colorGreen"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
 
 
     <Button

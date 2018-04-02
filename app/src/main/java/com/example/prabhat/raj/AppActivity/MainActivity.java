@@ -23,6 +23,17 @@ import android.widget.Toast;
 import com.example.prabhat.raj.R;
 
 import com.example.prabhat.raj.UtilsApp.AppUtils;
+import com.linkedin.platform.APIHelper;
+import com.linkedin.platform.LISessionManager;
+import com.linkedin.platform.errors.LIApiError;
+import com.linkedin.platform.errors.LIAuthError;
+import com.linkedin.platform.listeners.ApiListener;
+import com.linkedin.platform.listeners.ApiResponse;
+import com.linkedin.platform.listeners.AuthListener;
+import com.linkedin.platform.utils.Scope;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
     private Button dataTranbtn;
     private Button popBtn;
     private Intent popIntent;
+    private Intent mapIntent;
+    private static final String url = "https://api.linkedin.com/v1/people/~:(id,first-name," +
+            "last-name,public-profile-url,picture-url,email-address,picture-urls::(original))";
+
 
 
     @Override
@@ -130,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // Add this line to your existing onActivityResult() method
+        LISessionManager.getInstance (getApplicationContext ()).onActivityResult (this,
+                requestCode, resultCode, data);
         try {
             if (requestCode == GALLERY_CONSTANT) {
                 if (resultCode == Activity.RESULT_OK) {
@@ -267,5 +285,117 @@ public class MainActivity extends AppCompatActivity {
 
     public void jsonParsing(View view) {
          startActivity (new Intent (this, JsonParsingActivity.class));
+    }
+
+    public void linkedinSignIn(View view) {
+         logInToLinkedIn ();
+    }
+
+
+    public void logInToLinkedIn() {
+
+         mapIntent = new Intent (this,MapActivity.class);
+
+        final Activity thisActivity = this;
+        LISessionManager.getInstance (getApplicationContext ()).init (thisActivity, buildScope (),
+                new AuthListener () {
+                    @Override
+                    public void onAuthSuccess() {
+
+                        // Authentication was successful.  You can now do
+                        // other calls with the SDK.
+
+                      //  Toast.makeText (thisActivity, "LogIn Success1",
+                        //        Toast.LENGTH_SHORT).show ();
+                        linkededinApiHelper ();
+                        //Toast.makeText (thisActivity, "LogIn Success11",
+                          //      Toast.LENGTH_SHORT).show ();
+
+                        startActivity (mapIntent);
+
+                    }
+
+                    @Override
+                    public void onAuthError(LIAuthError error) {
+                        // Handle authentication errors
+                        Toast.makeText (thisActivity, "Find Some error"+error,
+                                Toast.LENGTH_LONG).show ();
+
+                    }
+                }, true);
+    }
+
+    // Build the list of member permissions our LinkedIn session requires
+    private static Scope buildScope() {
+
+        return Scope.build (Scope.R_BASICPROFILE, Scope.W_SHARE , Scope.R_EMAILADDRESS );
+    }
+
+   /* @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Add this line to your existing onActivityResult() method
+        LISessionManager.getInstance (getApplicationContext ()).onActivityResult (this,
+                requestCode, resultCode, data);
+    }
+*/
+
+
+    public void linkededinApiHelper() {
+        APIHelper apiHelper = APIHelper.getInstance(getApplicationContext());
+        apiHelper.getRequest(MainActivity.this, url, new ApiListener () {
+            @Override
+            public void onApiSuccess(ApiResponse result) {
+                try {
+
+                    // GRAB PERSON DATA, WITH EMAIL ADDRESS!!
+                    setprofile(result.getResponseDataAsJson());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onApiError(LIApiError error) {
+                // ((TextView) findViewById(R.id.error)).setText(error.toString());
+            }
+        });
+    }
+
+
+    public void setprofile(JSONObject response) {
+
+        try {
+
+            String  social_id = response.get("id").toString();
+            String socialFName = response.get("firstName").toString();
+            String socialLName = response.get("lastName").toString();
+            String socialEmail = response.get("emailAddress").toString();
+            // String socialName = response.get("formattedName").toString();
+            Toast.makeText (this, "Profile DAta :"+social_id+""+
+                            socialFName+""+socialEmail+""+socialLName,
+                    Toast.LENGTH_LONG).show ();
+            try {
+                JSONObject photo= response.getJSONObject("pictureUrls");
+                JSONArray values=photo.getJSONArray("values");
+                String socialPhotoUrl = values.getString(0);
+
+
+                Toast.makeText (this, "Profile picture url :"+socialPhotoUrl,
+                        Toast.LENGTH_LONG).show ();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText (this, ""+e.toString (), Toast.LENGTH_SHORT).show ();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void runTimePermission(View view) {
+        startActivity (new Intent (this, RunTimePermissionActivity.class));
     }
 }

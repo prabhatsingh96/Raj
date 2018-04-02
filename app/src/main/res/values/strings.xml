@@ -52,7 +52,7 @@
         <item>2010</item>
         <item>2011</item>
     </string-array>
-<string name="data">{"
+    <string name="data">{"
             +" \"message\": \"successfull\","
             +"        \"result\": {"
             +"         \"user_id\": \"8\","
@@ -75,5 +75,6 @@
             +"    \"is_bussy\": \"0\","
             +"     \"address\": \"3670 Trousdale Pkwy, Los Angeles, CA 90089, USA\","
             +"      "rating": "0"</string>
+    <string name="title_activity_map">Map</string>
 
 </resources>
