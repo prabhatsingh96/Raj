@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.prabhat.raj.R;
@@ -31,6 +32,7 @@ import com.linkedin.platform.listeners.ApiListener;
 import com.linkedin.platform.listeners.ApiResponse;
 import com.linkedin.platform.listeners.AuthListener;
 import com.linkedin.platform.utils.Scope;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -55,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
     private Button popBtn;
     private Intent popIntent;
     private Intent mapIntent;
+    public String sName;
+    public String sEmail;
+    public String sPhotoUrl;
     private static final String url = "https://api.linkedin.com/v1/people/~:(id,first-name," +
             "last-name,public-profile-url,picture-url,email-address,picture-urls::(original))";
 
@@ -294,8 +299,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void logInToLinkedIn() {
 
-         mapIntent = new Intent (this,MapActivity.class);
 
+        mapIntent = new Intent (this,MapActivity.class);
         final Activity thisActivity = this;
         LISessionManager.getInstance (getApplicationContext ()).init (thisActivity, buildScope (),
                 new AuthListener () {
@@ -311,8 +316,9 @@ public class MainActivity extends AppCompatActivity {
                         //Toast.makeText (thisActivity, "LogIn Success11",
                           //      Toast.LENGTH_SHORT).show ();
 
+                      //
                         startActivity (mapIntent);
-
+                        linkedInDetail ();
                     }
 
                     @Override
@@ -369,20 +375,19 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             String  social_id = response.get("id").toString();
-            String socialFName = response.get("firstName").toString();
+            sName = response.get("firstName").toString();
             String socialLName = response.get("lastName").toString();
-            String socialEmail = response.get("emailAddress").toString();
+            sEmail = response.get("emailAddress").toString();
             // String socialName = response.get("formattedName").toString();
             Toast.makeText (this, "Profile DAta :"+social_id+""+
-                            socialFName+""+socialEmail+""+socialLName,
+                            sName+""+sEmail+""+socialLName,
                     Toast.LENGTH_LONG).show ();
             try {
                 JSONObject photo= response.getJSONObject("pictureUrls");
                 JSONArray values=photo.getJSONArray("values");
-                String socialPhotoUrl = values.getString(0);
+                sPhotoUrl = values.getString(0);
 
-
-                Toast.makeText (this, "Profile picture url :"+socialPhotoUrl,
+                Toast.makeText (this, "Profile picture url :"+sPhotoUrl,
                         Toast.LENGTH_LONG).show ();
             }
             catch (Exception e)
@@ -394,6 +399,27 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
+    public void linkedInDetail() {
+
+        b = new AlertDialog.Builder(this);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.linked_in_detail_layout, null);
+        b.setView(view);
+        // b.show();
+        ad = b.create();
+        TextView name = view.findViewById(R.id.name);
+        TextView email = view.findViewById(R.id.et_email);
+        ImageView image = view.findViewById (R.id.linkedin_image);
+        name.setText (sName);
+        email.setText (sEmail);
+        Picasso.get ().load (sPhotoUrl).into (image);
+        ad.show();
+
+    }
+
+
 
     public void runTimePermission(View view) {
         startActivity (new Intent (this, RunTimePermissionActivity.class));

@@ -2,7 +2,9 @@ package com.example.prabhat.raj.AppActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,6 +15,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.prabhat.raj.R;
@@ -25,6 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,11 +44,14 @@ public class MapActivity extends FragmentActivity implements
     private GoogleMap mMap;
     private Location l;
     private LocationManager locationManager;
+    private AlertDialog.Builder b;
+    private AlertDialog ad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_map);
+
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager ().findFragmentById (R.id.map);
@@ -124,5 +134,7 @@ public class MapActivity extends FragmentActivity implements
     public void onProviderDisabled(String provider) {
 
     }
+
+
 }
 
