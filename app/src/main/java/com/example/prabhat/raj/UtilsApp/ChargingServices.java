@@ -33,7 +33,7 @@ public class ChargingServices extends Service {
         if(status){
             builder.setMessage("Phone is Pluggin");
             speech("Phone is Pluggin");
-           simpleNotification("Your Phone is charging now");
+            simpleNotification("Your Phone is charging now");
             simpleNotificationwithActivity("Your Phone is charging now");
             simpleNotificationGoActivityBackHome("Your Phone is charging now");
             simpleNotificationWithAction("Your Phone is charging now");
